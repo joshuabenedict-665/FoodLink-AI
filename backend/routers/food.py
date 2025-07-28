@@ -13,7 +13,6 @@ class SurplusFood(BaseModel):
 
 @router.post("/submit")
 async def submit_surplus(data: SurplusFood):
-    async def submit_surplus(data: SurplusFood):
     classification = predictor.classify_food(data.dict())
     
     if classification == "Unsafe":
