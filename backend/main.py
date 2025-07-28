@@ -1,9 +1,8 @@
 from fastapi import FastAPI
 from routers import food
 
-app = FastAPI(
-    title="FoodLink AI",
-    description="An AI-powered platform to reduce urban food waste",
-    version="1.0.0"
-)
+app = FastAPI()
 app.include_router(food.router)
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the Food Surplus API!"}
